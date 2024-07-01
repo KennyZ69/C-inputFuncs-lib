@@ -1,0 +1,12 @@
+
+# Compile the library
+cd code/c-lib
+gcc -c funcs.c -o funcs.o    # Create an object file
+ar rcs libfuncs.a funcs.o    # Create a static library
+
+# Compile and link the main program
+cd ../c-lang
+gcc main.c -L../c-lib -lfuncs -o main
+
+# Run the program
+./main
